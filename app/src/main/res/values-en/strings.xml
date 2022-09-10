@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Exercise App</string>
+    <string name="greeting">Good Evening!</string>
+</resources>
