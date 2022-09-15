@@ -1,30 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ci_profile"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/profile_picture"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="180dp"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_picture" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_profile"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/iv_profile"
+        android:text="Title"
+        android:textColor="#3F51B5"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/rating_film"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/iv_profile"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="0.0/5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/date_released"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_film"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/iv_profile"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_calendar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="20-08-2001" />
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@+id/date_released"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/iv_profile"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas ornare pulvinar. Suspendisse a leo at eros volutpat ornare nec vel magna. Pellentesque hendrerit nibh elementum rhoncus maximus." />
+</RelativeLayout>
