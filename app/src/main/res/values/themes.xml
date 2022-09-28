@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Exercise1" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Exercise1" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryLightColor</item>
         <item name="colorPrimaryVariant">@color/primaryColor</item>
@@ -12,5 +12,21 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="textHeading1">
+        <item name="android:textSize">96sp</item>
+    </style>
+
+    <style name="textHeading2">
+        <item name="android:textSize">60sp</item>
+    </style>
+
+    <style name="textHeading3">
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="textHeading4">
+        <item name="android:textSize">34sp</item>
     </style>
 </resources>
