@@ -28,12 +28,10 @@
         </activity>
         <activity
             android:name=".TypographyBeta"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".intent_exercise"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainLogin"
             android:exported="true" />
@@ -44,5 +42,5 @@
             android:name=".MainActivity"
             android:exported="true" />
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

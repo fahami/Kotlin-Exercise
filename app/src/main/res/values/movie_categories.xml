@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movie_categories">
+        <item>Action</item>
+        <item>Romance</item>
+        <item>Comedy</item>
+        <item>Thriller</item>
+        <item>Novel</item>
+        <item>Horrors</item>
+    </string-array>
+</resources>

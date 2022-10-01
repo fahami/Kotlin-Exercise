@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ListViewExperiment">
 
+    <Spinner
+        android:id="@+id/sp_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/sp_categories"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+        android:paddingHorizontal="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
 
 </RelativeLayout>

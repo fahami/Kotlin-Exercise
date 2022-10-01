@@ -4,24 +4,27 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 
-class MovieListAdapter() : Adapter<MovieListHolder>() {
-    private val movieData = arrayListOf<Movie>(
-    Movie("Anak Tiri", "Hambatan", R.drawable.ic_calendar),
-    Movie("Anak Kandung", "Hambatan", R.drawable.ic_exit),
-    Movie("Anak Cucu", "Hambatan", R.drawable.ic_play),
-    Movie("Anak Keponakan", "Hambatan", R.drawable.ic_setting),
-    Movie("Anak Oalah", "Hambatan", R.drawable.ic_star),
-    Movie("Anak Begitu", "Hambatan", R.drawable.profile_picture),
-    )
+class MovieListAdapter(
+    private val eventHandling: (Movie) -> Unit
+) : Adapter<MovieListHolder>() {
+    private val movies = arrayListOf<Movie>()
+
+    fun setData(movies: ArrayList<Movie>) {
+        this.movies.clear()
+        this.movies.addAll(movies)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListHolder {
         return MovieListHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.rv_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.rv_item, parent, false),
+            eventHandling
         )
     }
 
     override fun onBindViewHolder(holder: MovieListHolder, position: Int) {
-        holder.bindView(movieData[position])
+        holder.bindView(movies[position])
     }
 
-    override fun getItemCount(): Int  = movieData.size
+    override fun getItemCount(): Int = movies.size
 }
