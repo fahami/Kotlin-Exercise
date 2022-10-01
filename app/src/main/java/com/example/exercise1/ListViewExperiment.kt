@@ -3,8 +3,10 @@ package com.example.exercise1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 
 class ListViewExperiment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,10 +125,10 @@ class ListViewExperiment : AppCompatActivity() {
                 android.R.layout.simple_list_item_1,
                 listFoods,
             )
-        val listViewFood = findViewById<ListView>(R.id.lv_foods)
-        listViewFood.adapter = lvAdapter
-        listViewFood.setOnItemClickListener { adapterView, view, i, l ->
-            Toast.makeText(this, "Action ${listFoods[i]}", Toast.LENGTH_SHORT).show()
-        }
+
+        val rvMovie = findViewById<RecyclerView>(R.id.rv_movie)
+        rvMovie.layoutManager = GridLayoutManager(this, 2)
+        val rvMovieListAdapter = MovieListAdapter()
+        rvMovie.adapter = rvMovieListAdapter
     }
 }
