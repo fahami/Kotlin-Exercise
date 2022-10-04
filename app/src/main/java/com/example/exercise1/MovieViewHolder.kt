@@ -3,13 +3,10 @@ package com.example.exercise1
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.squareup.picasso.Picasso
 
-class MovieListHolder(itemView: View, val eventHandling: (Movie) -> Unit) : ViewHolder(itemView) {
+class MovieViewHolder(itemView: View, val eventHandling: (Movie) -> Unit) : ViewHolder(itemView) {
     val tvTitle = itemView.findViewById<TextView>(R.id.rv_title)
     val tvImage = itemView.findViewById<ImageView>(R.id.rv_cover)
 

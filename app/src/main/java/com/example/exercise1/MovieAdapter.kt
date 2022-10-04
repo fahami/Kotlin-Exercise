@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 
-class MovieListAdapter(
+class MovieAdapter(
     private val eventHandling: (Movie) -> Unit
-) : Adapter<MovieListHolder>() {
+) : Adapter<MovieViewHolder>() {
     private val movies = arrayListOf<Movie>()
 
     fun setData(movies: ArrayList<Movie>) {
@@ -15,14 +15,14 @@ class MovieListAdapter(
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListHolder {
-        return MovieListHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+        return MovieViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.rv_item, parent, false),
             eventHandling
         )
     }
 
-    override fun onBindViewHolder(holder: MovieListHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         holder.bindView(movies[position])
     }
 
