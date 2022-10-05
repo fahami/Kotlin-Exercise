@@ -20,6 +20,9 @@ class MovieActivity : AppCompatActivity() {
             intent.putExtra("title", it.title)
             intent.putExtra("poster", it.posterPath)
             intent.putExtra("description", it.overview)
+            intent.putExtra("releaseDate", it.releaseDate)
+            intent.putExtra("ratingValue", it.voteAverage)
+            intent.putExtra("votingCount", it.voteCount)
             startActivity(intent)
         }
         val json = assets.open("movies.json").bufferedReader().use { it.readText() }
