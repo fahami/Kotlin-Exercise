@@ -3,6 +3,7 @@ package com.example.exercise1
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.example.exercise1.data.Movie
 
 class MovieAdapter(
     private val eventHandling: (Movie) -> Unit
