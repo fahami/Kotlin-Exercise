@@ -1,8 +1,9 @@
-package com.example.exercise1
+package com.example.exercise1.movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
+import com.example.exercise1.R
 import com.example.exercise1.data.Movie
 
 class MovieAdapter(

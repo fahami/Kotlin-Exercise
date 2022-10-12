@@ -1,10 +1,11 @@
-package com.example.exercise1
+package com.example.exercise1.movies
 
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.exercise1.R
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 

@@ -1,9 +1,10 @@
-package com.example.exercise1
+package com.example.exercise1.movies
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.exercise1.R
 import com.example.exercise1.data.Movie
 import com.squareup.picasso.Picasso
 

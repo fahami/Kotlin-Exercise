@@ -1,13 +1,12 @@
-package com.example.exercise1
+package com.example.exercise1.movies
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.exercise1.R
 import com.example.exercise1.data.Movie
 import com.example.exercise1.data.Movies
-import com.example.exercise1.data.Products
 import com.google.gson.Gson
 
 class MovieActivity : AppCompatActivity() {
@@ -25,9 +24,12 @@ class MovieActivity : AppCompatActivity() {
             intent.putExtra("votingCount", it.voteCount)
             startActivity(intent)
         }
+//        Via local JSON
         val json = assets.open("movies.json").bufferedReader().use { it.readText() }
         val gson = Gson()
         val movies =  gson.fromJson(json, Movies::class.java)
+//        Via API
+
         rvMovieAdapter.setData(movies?.results!! as ArrayList<Movie>)
         rvMovie.adapter = rvMovieAdapter
     }
